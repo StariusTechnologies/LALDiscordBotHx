@@ -1,0 +1,21 @@
+{
+  "name": "ContinentDiscordBot",
+  "version": "1.0.0",
+  "description": "A Discord bot",
+  "main": "./bot.js",
+  "author": "Elian Wonhalf <elianwonhalf@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ElianWonhalf/ContinentDiscordBotHx.git"
+  },
+  "dependencies": {
+    "cleverbot-node": "^0.2.1",
+    "html-entities": "^1.2.0",
+    "mysql": "^2.10.2",
+    "discordhx": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=0.12.7"
+  },
+  "license": "MIT"
+}

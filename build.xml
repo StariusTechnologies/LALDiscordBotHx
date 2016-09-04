@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project basedir="." name="Continent" default="deploy">
+    <property file="database.properties"/>
+    <property file="discord.properties"/>
+    <property file="build.properties"/>
+
+    <target name="deploy">
+        <antcall target="set-token"/>
+        <antcall target="package"/>
+        <antcall target="upload"/>
+        <antcall target="remove-package"/>
+        <antcall target="unpack"/>
+        <antcall target="delete-package"/>
+        <antcall target="unset-token"/>
+        <antcall target="dump-sql"/>
+    </target>
+
+    <target name="dump-sql">
+        <exec executable="${mysqlDumpFolder}/mysqldump" output="database.sql">
+            <arg value="-d" />
+            <arg value="--user=${dbUser}" />
+            <arg value="--password=${dbPassword}" />
+            <arg value="--host=${dbHost}" />
+            <arg value="--port=${dbPort}" />
+            <arg value="${dbName}" />
+        </exec>
+
+        <loadfile srcfile="database.sql" property="validDump">
+            <filterchain>
+                <filterreader classname="org.apache.tools.ant.filters.HeadFilter">
+                    <param name="lines" value="-1"/>
+                    <param name="skip" value="7"/>
+                </filterreader>
+                <filterreader classname="org.apache.tools.ant.filters.TailFilter">
+                    <param name="lines" value="-1"/>
+                    <param name="skip" value="2"/>
+                </filterreader>
+            </filterchain>
+        </loadfile>
+
+        <echo message="${validDump}" file="database.sql" />
+
+        <replaceregexp
+                file="database.sql"
+                match=" AUTO_INCREMENT=\d+"
+                replace=""
+                flags="g"
+                />
+    </target>
+
+    <target name="set-token">
+        <replace
+            file="out/release/bot.js"
+            token="${DebugToken}"
+            value="${ProdToken}"
+        />
+    </target>
+
+    <target name="package">
+        <tar destfile="${archiveFilename}" compression="gzip">
+            <tarfileset dir="${basedir}/out/release" filemode="775" dirmode="775">
+                <include name="bot.js"/>
+                <include name="package.json"/>
+            </tarfileset>
+        </tar>
+    </target>
+
+    <target name="upload">
+        <scp
+            file="${archiveFilename}"
+            todir="${sshUser}@${sshHost}:${sshFolder}"
+            keyfile="${sshKeyFile}"
+            verbose="false" sftp="true"
+            trust="true"
+            filemode="775"
+            dirmode="775"
+        />
+    </target>
+
+    <target name="remove-package">
+        <echo>remove package...</echo>
+        <delete file="site.tar.gz"/>
+    </target>
+
+    <target name="unpack">
+        <sshexec
+            host="${sshHost}"
+            username="${sshUser}"
+            keyfile="${sshKeyFile}"
+            verbose="false"
+            trust="true"
+            command="tar -zxf ${sshFolder}/${archiveFilename} -C ${sshFolder}/"
+        />
+    </target>
+
+    <target name="delete-package">
+        <sshexec
+            host="${sshHost}"
+            username="${sshUser}"
+            keyfile="${sshKeyFile}"
+            verbose="false"
+            trust="true"
+            command="rm ${sshFolder}/${archiveFilename}"
+        />
+    </target>
+
+    <target name="unset-token">
+        <replace
+                file="out/release/bot.js"
+                token="${ProdToken}"
+                value="${DebugToken}"
+                />
+    </target>
+</project>
