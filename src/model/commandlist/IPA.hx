@@ -21,51 +21,32 @@ class IPA implements ICommandDefinition {
         if (args.length > 0 && args[0].length > 0) {
             var replacementMap:Map<String, Array<Int>> = getReplacementMap();
             var keys = replacementMap.keys();
-            var keyMaxLength = 1;
             var originalString = args.join(' ');
             var transcriptedString = '';
             var nextCharacter = false;
 
-            for (key in keys) {
-                if (key.length > keyMaxLength) {
-                    keyMaxLength = key.length;
-                }
-            }
-
             while (originalString.length > 0) {
-                var i = 1;
+                var chunkLength = originalString.length;
+                var found = false;
 
-                nextCharacter = false;
+                while (chunkLength > 0 && !found) {
+                    var chunk = originalString.substr(0, chunkLength);
 
-                while (!nextCharacter && i <= Math.min(keyMaxLength, originalString.length)) {
-                    var currentIndex = originalString.substr(0, i);
+                    if (replacementMap.exists(chunk)) {
+                        var match = replacementMap.get(chunk);
 
-                    if (replacementMap.exists(currentIndex)) {
-                        var addition = replacementMap.get(currentIndex);
+                        found = true;
 
-                        for (character in addition) {
-                            transcriptedString += String.fromCharCode(character);
+                        for (characterCode in match) {
+                            transcriptedString += String.fromCharCode(characterCode);
                         }
 
-                        originalString = originalString.substring(i);
-                        nextCharacter = true;
-                    } else {
-                        var possibleMatch = false;
-
-                        for (key in keys) {
-                            if (key.substr(0, i) == currentIndex) {
-                                possibleMatch = true;
-                            }
-                        }
-
-                        if (!possibleMatch) {
-                            transcriptedString += currentIndex;
-                            originalString = originalString.substring(i);
-                            nextCharacter = true;
-                        }
+                        originalString = originalString.substr(chunkLength);
+                    } else if (chunkLength == 1) {
+                        transcriptedString += chunk;
                     }
 
-                    i++;
+                    chunkLength--;
                 }
             }
 
@@ -93,11 +74,17 @@ class IPA implements ICommandDefinition {
         replacementMap.set('b_<', [595]);
         replacementMap.set('c', [99]);
         replacementMap.set('d', [100]);
+        replacementMap.set('dK\\', [100, 865, 622]);
+        replacementMap.set('dz', [100, 865, 122]);
+        replacementMap.set('dz\\', [100, 865, 657]);
+        replacementMap.set('dZ', [100, 865, 658]);
         replacementMap.set('d`', [598]);
+        replacementMap.set('d`z`', [598, 865, 656]);
         replacementMap.set('d_<', [599]);
         replacementMap.set('e', [101]);
         replacementMap.set('f', [102]);
         replacementMap.set('g', [609]);
+        replacementMap.set('gb', [103, 865, 98]);
         replacementMap.set('g_<', [608]);
         replacementMap.set('h', [104]);
         replacementMap.set('h\\', [614]);
@@ -105,11 +92,13 @@ class IPA implements ICommandDefinition {
         replacementMap.set('j', [106]);
         replacementMap.set('j\\', [669]);
         replacementMap.set('k', [107]);
+        replacementMap.set('kp', [107, 865, 112]);
         replacementMap.set('l', [108]);
         replacementMap.set('l`', [621]);
         replacementMap.set('l\\', [634]);
         replacementMap.set('m', [109]);
         replacementMap.set('n', [110]);
+        replacementMap.set('Nm', [331, 865, 109]);
         replacementMap.set('n`', [627]);
         replacementMap.set('o', [111]);
         replacementMap.set('p', [112]);
@@ -123,7 +112,12 @@ class IPA implements ICommandDefinition {
         replacementMap.set('s`', [642]);
         replacementMap.set('s\\', [597]);
         replacementMap.set('t', [116]);
+        replacementMap.set('tK', [116, 865, 620]);
+        replacementMap.set('ts', [116, 865, 115]);
+        replacementMap.set('ts\\', [116, 865, 597]);
+        replacementMap.set('tS', [116, 865, 643]);
         replacementMap.set('t`', [648]);
+        replacementMap.set('t`s`', [648, 865, 642]);
         replacementMap.set('u', [117]);
         replacementMap.set('v', [118]);
         replacementMap.set('w', [119]);
@@ -184,6 +178,7 @@ class IPA implements ICommandDefinition {
         replacementMap.set('@\\', [600]);
         replacementMap.set('{', [230]);
         replacementMap.set('}', [649]);
+        replacementMap.set(')', [865]);
         replacementMap.set('3\\', [606]);
         replacementMap.set('&', [630]);
         replacementMap.set('?', [660]);
