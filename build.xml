@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project basedir="." name="Continent" default="deploy">
+<project basedir="." name="Ylias" default="deploy">
     <property file="database.properties"/>
     <property file="discord.properties"/>
     <property file="build.properties"/>
+    <property name="ProdToken" value="${OAuthProdToken}"/>
 
     <target name="deploy">
         <antcall target="set-token"/>
@@ -41,16 +42,16 @@
         <echo message="${validDump}" file="database.sql" />
 
         <replaceregexp
-                file="database.sql"
-                match=" AUTO_INCREMENT=\d+"
-                replace=""
-                flags="g"
-                />
+            file="database.sql"
+            match=" AUTO_INCREMENT=\d+"
+            replace=""
+            flags="g"
+        />
     </target>
 
     <target name="set-token">
         <replace
-            file="out/release/bot.js"
+            file="out/bot.js"
             token="${DebugToken}"
             value="${ProdToken}"
         />
@@ -58,7 +59,7 @@
 
     <target name="package">
         <tar destfile="${archiveFilename}" compression="gzip">
-            <tarfileset dir="${basedir}/out/release" filemode="775" dirmode="775">
+            <tarfileset dir="${basedir}/out" filemode="775" dirmode="775">
                 <include name="bot.js"/>
                 <include name="package.json"/>
             </tarfileset>
@@ -72,8 +73,8 @@
             keyfile="${sshKeyFile}"
             verbose="false" sftp="true"
             trust="true"
-            filemode="775"
             dirmode="775"
+            filemode="775"
         />
     </target>
 
@@ -106,7 +107,7 @@
 
     <target name="unset-token">
         <replace
-                file="out/release/bot.js"
+                file="out/bot.js"
                 token="${ProdToken}"
                 value="${DebugToken}"
                 />

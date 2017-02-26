@@ -1,21 +1,24 @@
 {
-  "name": "ContinentDiscordBot",
-  "version": "1.0.0",
-  "description": "A Discord bot",
-  "main": "./bot.js",
+  "name": "laldiscordbothx",
+  "version": "2.0.0",
+  "description": "A bot for Discord",
+  "main": "./laldiscordbothx/Bot.hx",
   "author": "Elian Wonhalf <elianwonhalf@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ElianWonhalf/ContinentDiscordBotHx.git"
+    "url": "https://github.com/ElianWonhalf/LALDiscordBotHx.git"
+  },
+  "scripts": {
+    "test": "haxe -main laldiscordbothx.Bot --macro include('laldiscordbothx.model.commandlist') -debug -D no-simplify -cp ./node_modules/nodehx -cp ./node_modules/discordhx -cp ./node_modules/discordbothx -cp ./node_modules/msignal -cp ./ -js ./out/bot.js"
   },
   "dependencies": {
-    "cleverbot-node": "^0.2.1",
-    "html-entities": "^1.2.0",
-    "mysql": "^2.10.2",
-    "discordhx": "^1.0.0"
+    "discordbothx": "^1.2.x",
+    "imgflipper": "^1.0.1",
+    "mysql": "^2.13.0",
+    "xmldom": "^0.1.27"
   },
   "engines": {
-    "node": ">=0.12.7"
+    "node": ">=6.0.0"
   },
   "license": "MIT"
 }

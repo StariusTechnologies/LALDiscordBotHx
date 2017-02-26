@@ -1,0 +1,688 @@
+{
+    "laldiscordbothx": {
+        "bot": {
+            "new": {
+                "helpdialogintroduction": [
+                    "Bot **Ylias** for **Discord** - need help? Here is a list of the commands I can answer to:"
+                ],
+                "helpdialogend": [
+                    "As you can see, some commands can take parameters. A parameter is indicated by a pair of parenthesis. When you type the command, you shall not type these parenthesis. If you see parameters in *italic*, that means they are optionnal. If you need more help, ask **Elian Wonhalf**. He's the dumbass that created me, he should know."
+                ]
+            },
+            "bindsignals": {
+                "cleverbotio_bot_suspected": [
+                    "**whispers to the others** Hey people... I don't mean to freak you out, but I think that %% is a bot. He answers way too quickly..."
+                ],
+                "cleverbotio_not_ready": [
+                    "Wait wait %%, I didn't even have enough time to wake up properly, Elian just started me right now... Can I get some coffee please?"
+                ],
+                "no_last_command": [
+                    "%%, no command was executed on this channel since I joined. Sorry :/ ."
+                ],
+                "unauthorized_command_message_to_owner": [
+                    "%% tried to execute command %% with arguments \"%%\" but doesn't have the right to. %%"
+                ],
+                "unauthorized_command_message_to_member": [
+                    "Sorry, %%, you don't have the right to execute this command."
+                ],
+                "unknown_command": [
+                    "%%? I don't know this command, sorry, %%... You can get the command list by typing %%help :) ."
+                ],
+                "check_permission_error": [
+                    "Sorry %%, there has been a problem while retrieving your permissions."
+                ],
+                "get_denied_command_list_error": [
+                    "Sorry %%, there has been a problem while retrieving the list."
+                ],
+                "help_dialog_sent_confirmation": [
+                    "I just sent you a list of the commands I can answer to in DM, %%."
+                ],
+                "help_dialog_send_error": [
+                    "Sorry %%, there has been an error while sending the help dialog."
+                ]
+            }
+        },
+        "event": {
+            "clickeventhandler": {
+                "servernewmemberhandler": {
+                    "fail": [
+                        "The member %% just joined server %%, but I couldn't send him a private message because of a database error... Can you handle it?"
+                    ],
+                    "notification_to_staff": [
+                        "The member %% just joined server %%!"
+                    ]
+                },
+                "servermemberremovedhandler": {
+                    "notification_to_staff": [
+                        "The member %% just left server %%!"
+                    ]
+                }
+            }
+        },
+        "model": {
+            "chat": {
+                "ask": {
+                    "bot_suspected": [
+                        "**whispers to the others** Hey people... I don't mean to freak you out, but I think that %% is a bot. He answers way too quickly..."
+                    ],
+                    "not_ready": [
+                        "Wait wait %%, I didn't even have enough time to wake up properly, Elian just started me right now... Can I get some coffee?"
+                    ]
+                }
+            },
+            "repeatcommand": {
+                "description": [
+                    "Allows you to execute again the last executed command"
+                ],
+                "no_last_command": [
+                    "%%, No command was executed on this channel since I joined. Sorry :/ ."
+                ]
+            },
+            "commandlist": {
+                "avatar": {
+                    "description": [
+                        "Shows a member avatar in the chat, wider"
+                    ],
+                    "not_found": [
+                        "Sorry %%, but I didn't find this member..."
+                    ],
+                    "client_avatar_author": [
+                        "My avatar has been created by Miago: %%"
+                    ]
+                },
+                "aww": {
+                    "description": [
+                        "Displays a random AWW"
+                    ],
+                    "fail": [
+                        "Welp... Seems like Reddit just crashed. I'm sorry %% :( ..."
+                    ],
+                    "link_to_the_topic": [
+                        "Link to the topic:"
+                    ]
+                },
+                "cat": {
+                    "description": [
+                        "Displays a random cat"
+                    ],
+                    "fail": [
+                        "Welp... Seems like random.cat just crashed. I'm sorry %% :( ..."
+                    ]
+                },
+                "crash": {
+                    "description": [
+                        "This command kills me. I mean... Literally"
+                    ],
+                    "speech": [
+                        "Oh, so it's like that? So you're tired of me? Alright. You really think you can get rid of me just like that? You really think it's that easy? Yo, I'm crazy! I can handle paradoxes without a flinch!\n\n\"This sentence is wrong.\""
+                    ]
+                },
+                "decide": {
+                    "description": [
+                        "You have two (or more) options, you have to make a choice, and you just can't make your mind? Let me help :D"
+                    ],
+                    "split": [
+                        "or"
+                    ],
+                    "wrong_format": [
+                        "%%, You ask me to pick one, but... You only have one to pick... It doesn't make any sense D: !"
+                    ]
+                },
+                "deletelink" : {
+                    "description": [
+                    "Allows you to delete a link"
+                    ],
+                    "wrong_format": [
+                        "%% => You're asking me to delete a link without telling me which one it is? I may have trouble guessing it :/ ."
+                    ],
+                    "not_found": [
+                        "%% => The link you're asking me to delete doesn't exist. I guess it's good news?"
+                    ],
+                    "fail": [
+                        "%% => Nope, didn't work : %%"
+                    ],
+                    "success": [
+                        "%% => Got it, deleted it!"
+                    ]
+                },
+                "deletewelcomemessage": {
+                    "description": [
+                        "Allows you to delete a server's welcome message"
+                    ],
+                    "not_found": [
+                        "%%, The welcome message you're asking me to delete doesn't exist. I guess it's good news?"
+                    ],
+                    "fail": [
+                        "%%, Nope, didn't work : %%"
+                    ],
+                    "success": [
+                        "%%, Got it, deleted it!"
+                    ]
+                },
+                "describe": {
+                    "description": [
+                        "You can ask a bot like me to describe a picture!"
+                    ],
+                    "wait": [
+                        "Alright %%, just let me a few seconds..."
+                    ],
+                    "error": [
+                        "You forgot to give me a picture :| ..."
+                    ]
+                },
+                "dog": {
+                    "description": [
+                        "Displays a random dog"
+                    ],
+                    "fail": [
+                        "Welp... Seems like random.dog just crashed. I'm sorry %% :( ..."
+                    ]
+                },
+                "eval": {
+                    "description": [
+                        "Allows you to execute javascript commands and display the return value."
+                    ],
+                    "exception": [
+                        "Well done, %%, you code almost made me crash!"
+                    ]
+                },
+                "fluent": {
+                    "description": [
+                        "Allows you to add yourself a role"
+                    ],
+                    "parse_error": [
+                        "%% => You forgot to tell me which role you want!"
+                    ],
+                    "wrong_channel": [
+                        "%% => You want me to give you a role... On a private channel? You're weird :| ."
+                    ],
+                    "forbidden": [
+                        "%% => I don't have the right to give you the role you wrote. Actually, I don't even know if it exists."
+                    ],
+                    "not_found": [
+                        "%% => I couldn't find the role you wrote. Everything in this case leads me to think that this role... Doesn't exist. **dramatic music**\nYou can type !rolelist to have the list of the available roles :) ."
+                    ],
+                    "fail_give": [
+                        "%% => I tried to give you that role, but it didn't work."
+                    ],
+                    "success_give": [
+                        "%% => Alright, I just gave you that role :) !"
+                    ],
+                    "fail_remove": [
+                        "%% => I tried to remove that role from you, but it didn't work."
+                    ],
+                    "success_remove": [
+                        "%% => Alright, I just removed that role from you :) !"
+                    ]
+                },
+                "getlinks": {
+                    "description": [
+                        "Allows you to get the resource list"
+                    ],
+                    "introduction": [
+                        "Here is the resource list :"
+                    ],
+                    "empty": [
+                        "%% => There is no record at the time."
+                    ],
+                    "channel_message": [
+                        "%% => I just sent you the resource list in a private message."
+                    ]
+                },
+                "getty": {
+                    "description": [
+                        "Displays a random animal"
+                    ],
+                    "not_found": [
+                        "Welp... Seems like there is no result for your search. I'm sorry %% :( ..."
+                    ],
+                    "fail": [
+                        "Welp... Seems like getty API just crashed. I'm sorry %% :( ..."
+                    ]
+                },
+                "getwelcomemessage": {
+                    "description": [
+                        "Allows you to see the welcome message that will be sent to the members who join this server"
+                    ],
+                    "fail": [
+                        "%%, Nope, didn't work : %%"
+                    ],
+                    "success": [
+                        "%%, The welcome message for this server is the following:\n\n%%"
+                    ],
+                    "not_found": [
+                        "%%, I don't have any welcome message for that server"
+                    ]
+                },
+                "ipa": {
+                    "description": [
+                        "Allows you to transcript from X-SAMPA to IPA"
+                    ],
+                    "fail": [
+                        "You gave me no string to transcript, %%. Well, I can try, ya know. But it can output something really random. Like... Beetroot."
+                    ]
+                },
+                "learning": {
+                    "description": [
+                        "Allows you to add yourself a role"
+                    ],
+                    "parse_error": [
+                        "%% => You forgot to tell me which role you want!"
+                    ],
+                    "wrong_channel": [
+                        "%% => You want me to give you a role... On a private channel? You're weird :| ."
+                    ],
+                    "forbidden": [
+                        "%% => I don't have the right to give you the role you wrote. Actually, I don't even know if it exists."
+                    ],
+                    "not_found": [
+                        "%% => I couldn't find the role you wrote. Everything in this case leads me to think that this role... Doesn't exist. **dramatic music**\nYou can type !rolelist to have the list of the available roles :) ."
+                    ],
+                    "fail_give": [
+                        "%% => I tried to give you that role, but it didn't work."
+                    ],
+                    "success_give": [
+                        "%% => Alright, I just gave you that role :) !"
+                    ],
+                    "fail_remove": [
+                        "%% => I tried to remove that role from you, but it didn't work."
+                    ],
+                    "success_remove": [
+                        "%% => Alright, I just removed that role from you :) !"
+                    ]
+                },
+                "link": {
+                    "description": [
+                        "You can retrieve a useful link to a resource"
+                    ],
+                    "not_found": [
+                        "Sorry %%, I didn't find any resource with this name :/ ..."
+                    ],
+                    "parse_error": [
+                        "If you don't give me the name of the resource you're looking for, %%, I might have trouble finding it."
+                    ]
+                },
+                "native": {
+                    "description": [
+                        "Allows you to add yourself a role"
+                    ],
+                    "parse_error": [
+                        "%% => You forgot to tell me which role you want!"
+                    ],
+                    "wrong_channel": [
+                        "%% => You want me to give you a role... On a private channel? You're weird :| ."
+                    ],
+                    "forbidden": [
+                        "%% => I don't have the right to give you the role you wrote. Actually, I don't even know if it exists."
+                    ],
+                    "not_found": [
+                        "%% => I couldn't find the role you wrote. Everything in this case leads me to think that this role... Doesn't exist. **dramatic music**\nYou can type !rolelist to have the list of the available roles :) ."
+                    ],
+                    "fail_give": [
+                        "%% => I tried to give you that role, but it didn't work."
+                    ],
+                    "success_give": [
+                        "%% => Alright, I just gave you that role :) !"
+                    ],
+                    "fail_remove": [
+                        "%% => I tried to remove that role from you, but it didn't work."
+                    ],
+                    "success_remove": [
+                        "%% => Alright, I just removed that role from you :) !"
+                    ]
+                },
+                "oed": {
+                    "description": [
+                        "Allows you to retrieve a definition in the Oxford English Dictinnary"
+                    ],
+                    "404": [
+                        "Sorry %%, I didn't find the word you're looking for!"
+                    ],
+                    "fatal": [
+                        "Sorry %%, looks like Oxford English Dictionary service is down :( ..."
+                    ],
+                    "fail": [
+                        "You didn't give me the word you want the definition for, %% :| ..."
+                    ]
+                },
+                "ping": {
+                    "description": [
+                        "Who's up for ping pong? Oh, sorry. Table tennis u_u"
+                    ],
+                    "answer": [
+                        "%%, Pong!"
+                    ]
+                },
+                "registerpermission": {
+                    "description": [
+                        "Allows you to allow or deny a command access to someone"
+                    ],
+                    "wrong_format": [
+                        "%%, We got a problem. I think you made a mistake while typing the command, I didn't understand a thing."
+                    ],
+                    "wrong_user": [
+                        "%%, We got a problem. I don't know which member you want to register a permission from. I need the member ID, right? Well, you can highlight him with an @, I will translate it."
+                    ],
+                    "granted_parse_error": [
+                        "%%, You wanna grant or deny, there? It's not really crystal clear ._. ..."
+                    ],
+                    "success": [
+                        "%%, The permission has been successfully registered :) !"
+                    ],
+                    "fail": [
+                        "%%, There has been an error during registering, sorry :/ ."
+                    ]
+                },
+                "registerstaff": {
+                    "description": [
+                        "Allows you to register a member to the staff and subscribe him to the new member notifications"
+                    ],
+                    "private_channel_error": [
+                        "%%, I need you to execute this command on a server so I know which one you're talking about."
+                    ],
+                    "no_mention": [
+                        "%%, You haven't mentionned anyone in your message, how am I supposed to know who to register?"
+                    ],
+                    "fail": [
+                        "%%, There has been an error during save, sorry :/ ..."
+                    ],
+                    "success": [
+                        "%%, The member has been successfully registered in the staff and subscribed to the notifications :) !"
+                    ]
+                },
+                "role": {
+                    "description": [
+                        "Allows you to add yourself a role"
+                    ],
+                    "parse_error": [
+                        "%% => You forgot to tell me which role you want!"
+                    ],
+                    "wrong_channel": [
+                        "%% => You want me to give you a role... On a private channel? You're weird :| ."
+                    ],
+                    "forbidden": [
+                        "%% => I don't have the right to give you the role you wrote. Actually, I don't even know if it exists."
+                    ],
+                    "not_found": [
+                        "%% => I couldn't find the role you wrote. Everything in this case leads me to think that this role... Doesn't exist. **dramatic music**\nYou can type !rolelist to have the list of the available roles :) ."
+                    ],
+                    "fail_give": [
+                        "%% => I tried to give you that role, but it didn't work."
+                    ],
+                    "success_give": [
+                        "%% => Alright, I just gave you that role :) !"
+                    ],
+                    "fail_remove": [
+                        "%% => I tried to remove that role from you, but it didn't work."
+                    ],
+                    "success_remove": [
+                        "%% => Alright, I just removed that role from you :) !"
+                    ]
+                },
+                "rolelist": {
+                    "description": [
+                        "Allows you to get the role list"
+                    ],
+                    "wrong_channel": [
+                        "%% => I don't have a role list for a private channel..."
+                    ],
+                    "answer": [
+                        "Here is the list of the available roles:"
+                    ],
+                    "witness": [
+                        "I just sent you in private the list of the available roles, %%"
+                    ]
+                },
+                "setavatar": {
+                    "description": [
+                        "Allows you to change my avatar"
+                    ],
+                    "network_error": [
+                        "%%, The request failed, are you sure the address is correct?"
+                    ],
+                    "fail": [
+                        "%%, The avatar change didn't work, are you sure your URL goes to an image?"
+                    ],
+                    "answer": [
+                        "%%, My avatar has been successfully changed :D !"
+                    ]
+                },
+                "setlang": {
+                    "description": [
+                        "Allows you to change my lang"
+                    ],
+                    "wrong_format": [
+                        "You forgot to tell me in which lang I should speak..."
+                    ],
+                    "wrong_lang": [
+                        "I am sorry, but I don't know this lang :/ ..."
+                    ],
+                    "answer": [
+                        "Okay, my lang has been successfully changed :) !"
+                    ]
+                },
+                "setlink": {
+                    "description": [
+                        "Allows you to add or edit a link to a resource"
+                    ],
+                    "wrong_format": [
+                        "%% => We got a problem. I think you got mistaken while typing the command... I did not understand a thing."
+                    ],
+                    "fail": [
+                        "%% => Nope, didn't work : %%"
+                    ],
+                    "success": [
+                        "%% => Got it, saved it!"
+                    ]
+                },
+                "setwelcomemessage": {
+                    "description": [
+                        "Allows you to set the welcome message that will be sent to the members who join this server"
+                    ],
+                    "wrong_format": [
+                        "%%, We got a problem. I think you got mistaken while typing the command... I did not understand a thing."
+                    ],
+                    "fail": [
+                        "%%, Nope, didn't work : %%"
+                    ],
+                    "success": [
+                        "%%, Got it, saved it!"
+                    ]
+                },
+                "studying": {
+                    "description": [
+                        "Allows you to add yourself a role"
+                    ],
+                    "parse_error": [
+                        "%% => You forgot to tell me which role you want!"
+                    ],
+                    "wrong_channel": [
+                        "%% => You want me to give you a role... On a private channel? You're weird :| ."
+                    ],
+                    "forbidden": [
+                        "%% => I don't have the right to give you the role you wrote. Actually, I don't even know if it exists."
+                    ],
+                    "not_found": [
+                        "%% => I couldn't find the role you wrote. Everything in this case leads me to think that this role... Doesn't exist. **dramatic music**\nYou can type !rolelist to have the list of the available roles :) ."
+                    ],
+                    "fail_give": [
+                        "%% => I tried to give you that role, but it didn't work."
+                    ],
+                    "success_give": [
+                        "%% => Alright, I just gave you that role :) !"
+                    ],
+                    "fail_remove": [
+                        "%% => I tried to remove that role from you, but it didn't work."
+                    ],
+                    "success_remove": [
+                        "%% => Alright, I just removed that role from you :) !"
+                    ]
+                },
+                "unregisterpermission": {
+                    "description": [
+                        "Allows you to delete a previously registered permission"
+                    ],
+                    "wrong_format": [
+                        "%%, We got a problem. I think you made a mistake while typing the command, I didn't understand a thing."
+                    ],
+                    "wrong_user": [
+                        "%%, We got a problem. I don't know which member you want to unregister a permission from. I need the member ID, right? Well, you can highlight him with an @, I will translate it."
+                    ],
+                    "not_found": [
+                        "%%, The permission you're asking me to delete doesn't exist. I guess it's good news?"
+                    ],
+                    "success": [
+                        "%%, The permission has been successfully unregistered :) !"
+                    ],
+                    "fail": [
+                        "%%, There has been an error during unregistering, sorry :/ ."
+                    ]
+                },
+                "unregisterstaff": {
+                    "description": [
+                        "Allows you to delete a member from the staff"
+                    ],
+                    "private_channel_error": [
+                        "%%, I need you to execute this command on a server so I know which one you're talking about."
+                    ],
+                    "no_mention": [
+                        "%%, You haven't mentionned anyone in your message, how am I supposed to know who to delete?"
+                    ],
+                    "not_found": [
+                        "%%, The member you want to delete from the staff is already not part of the staff. I guess that's good news?"
+                    ],
+                    "fail": [
+                        "%%, There has been an error during save, sorry :/ ..."
+                    ],
+                    "success": [
+                        "%%, The member has been successfully deleted from the staff :) !"
+                    ]
+                },
+                "wiki": {
+                    "description": [
+                        "I can look up an article on Wikipedia and write the beginning here if you want"
+                    ],
+                    "parse_error": [
+                        "%%, You wanna make a search on Wikipedia without... Search terms?"
+                    ],
+                    "fail": [
+                        "Seems like Wikipedia crashed. Didn't think that day would come! Sorry %%!"
+                    ],
+                    "not_found": [
+                        "23 19, WE GOT A 23 19!! Oh, wait, it's a 404, sorry. Well, the page you asked for doesn't exist on Wikipédia. Sorry, %% !"
+                    ]
+                }
+            },
+            "mangapicture": {
+                "searchpicture": {
+                    "sql_error": [
+                        "Welp... Seems like my database is not in the mood... I am sorry %% :( ..."
+                    ],
+                    "forbidden_search_message_to_owner": [
+                        "The user %% tried to search a manga picture with the following forbidden tag(s): %%. %%"
+                    ],
+                    "forbidden_search_public_message": [
+                        "%%, You just made a search that involved at least one blacklisted tag. That's nasty. Here are the incriminated tags: %%"
+                    ],
+                    "wait": [
+                        "Just a moment, %%, gotta ask %% if he can find something for you..."
+                    ]
+                },
+                "proxypicturefoundhandler": {
+                    "no_valid_picture_found": [
+                        "Sorry %%, but I did not find any picture that would've been authorized on this server... You can retry if you want, who know, I could find one this time! But don't spam, please. If I still don't find after a few retries, you can stop right there, I won't find at all."
+                    ]
+                }
+            },
+            "entity": {
+                "permission": {
+                    "register": {
+                        "error_data_format": [
+                            "Incorrect data format"
+                        ],
+                        "error_sql_server_retrieval": [
+                            "SQL server returned an error while retrieving data"
+                        ],
+                        "error_sql_server_saving": [
+                            "SQL server returned an error while saving data"
+                        ],
+                        "error_404": [
+                            "This permission doesn't exist"
+                        ]
+                    },
+                    "unregister": {
+                        "error_data_format": [
+                            "Incorrect data format"
+                        ],
+                        "error_sql_server_retrieval": [
+                            "SQL server returned an error while retrieving data"
+                        ],
+                        "error_sql_server_deleting": [
+                            "SQL server returned an error while deleting data"
+                        ]
+                    }
+                }
+            },
+            "command": {
+                "requestexecutecommand": {
+                    "message_to_owner": [
+                        "%% tried to execute command %% with arguments \"%%\" but doesn't have the right to. %%"
+                    ],
+                    "message_to_member": [
+                        "Sorry, %%, you don't have the right to execute this command."
+                    ]
+                },
+                "handleunknowncommand": {
+                    "answer": [
+                        "%%? I don't know this command, sorry, %%... You can get the command list by typing !help :) ."
+                    ]
+                }
+            }
+        },
+        "utils": {
+            "humanify": {
+                "getimagedeliverysentence": {
+                    "1": [
+                        "Here!"
+                    ],
+                    "2": [
+                        "Here's one!"
+                    ],
+                    "3": [
+                        "Do you like this one?"
+                    ],
+                    "4": [
+                        "Found this one!"
+                    ],
+                    "5": [
+                        "Someone told me a lot about this one. Won't tell you who, though c: ."
+                    ]
+                },
+                "getchoicedeliverysentence": {
+                    "1": [
+                        "I choose %%!"
+                    ],
+                    "2": [
+                        "%%, without a doubt."
+                    ],
+                    "3": [
+                        "You kidding, right? Pick %%, obviously!"
+                    ],
+                    "4": [
+                        "To make this choice is a big responsibility. But I'm ready. I pick %%."
+                    ]
+                }
+            },
+            "discordutils": {
+                "getlocationstringfrommessage": {
+                    "location_private": [
+                        "It was on a private conversation (date : %%)."
+                    ],
+                    "location_public": [
+                        "It was on server %% and on channel #%% (date : %%)."
+                    ]
+                }
+            }
+        }
+    }
+}
