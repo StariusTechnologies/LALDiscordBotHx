@@ -1,5 +1,7 @@
 package laldiscordbothx.model.commandlist;
 
+import discordbothx.log.Logger;
+import laldiscordbothx.config.Config;
 import discordbothx.service.DiscordUtils;
 import discordbothx.core.CommunicationContext;
 import discordhx.message.Message;
@@ -17,7 +19,7 @@ class Rolelist extends LALBaseCommand {
         if (context.message.guild != null) {
             var channel:TextChannel = cast context.message.channel;
             var roles = channel.guild.roles.array();
-            var message = l('answer') + '\n\n';
+            var message: String = l('answer') + '\n\n';
             var roleNames: Array<String> = roles.map(function (role: Role): String {
                 return role.name;
             });
@@ -47,8 +49,13 @@ class Rolelist extends LALBaseCommand {
                 }
             }
 
-            context.sendToAuthor(message, cast {split: true}).then(function (message: Message) {
+            message = message.substr(0, message.length - 1);
+
+            context.sendToAuthor(message).then(function (message: Message) {
+                Logger.debug(l('witness', cast [author]));
                 context.sendToChannel(l('witness', cast [author]));
+            }).catchError(function (error: Dynamic) {
+                Logger.exception(error);
             });
         } else {
             context.sendToChannel(l('wrong_channel', cast [author]));
