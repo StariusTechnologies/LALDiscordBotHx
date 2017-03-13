@@ -51,7 +51,7 @@ class Native extends LALBaseCommand {
                                     }
                                 }
 
-                                if (!hasNative) {
+                                if (Config.NO_TAGS_GO_WITH_NATIVE_SERVERS.indexOf(context.message.guild.id) < 0 && memberRoles.length < 1 || !hasNative) {
                                     for (role in roles) {
                                         if (role.name.toLowerCase().indexOf(Config.NO_TAGS_ROLE.toLowerCase()) > -1) {
                                             member.addRole(role);

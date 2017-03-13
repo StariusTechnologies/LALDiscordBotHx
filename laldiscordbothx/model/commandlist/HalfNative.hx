@@ -8,7 +8,7 @@ import discordbothx.core.CommunicationContext;
 import discordhx.channel.TextChannel;
 import discordhx.role.Role;
 
-class Studying extends LALBaseCommand {
+class HalfNative extends LALBaseCommand {
     public function new(context: CommunicationContext) {
         super(context);
 
@@ -21,9 +21,9 @@ class Studying extends LALBaseCommand {
 
         if (args.length > 0) {
             if (context.message.guild != null) {
-                var wantedRole = 'studying ' + args.join(' ').toLowerCase();
+                var wantedRole = 'half native ' + args.join(' ').toLowerCase();
 
-                var channel:TextChannel = cast context.message.channel;
+                var channel: TextChannel = cast context.message.channel;
                 var roles: Array<Role> = channel.guild.roles.array();
                 var roleExists = false;
                 var targetRole: Role = null;

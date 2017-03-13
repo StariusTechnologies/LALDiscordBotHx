@@ -1,5 +1,7 @@
 package laldiscordbothx.model.commandlist;
 
+import haxe.Timer;
+import laldiscordbothx.config.Config;
 import discordhx.guild.GuildMember;
 import discordbothx.log.Logger;
 import discordbothx.core.CommunicationContext;
@@ -37,6 +39,29 @@ class Learning extends LALBaseCommand {
                 if (roleExists && targetRole != null) {
                     if (member.roles.has(targetRole.id)) {
                         member.removeRole(targetRole).then(function (member: GuildMember): Void {
+                            if (Config.NO_TAGS_GO_WITH_NATIVE_SERVERS.indexOf(context.message.guild.id) < 0) {
+                                Timer.delay(function () {
+                                    var channel:TextChannel = cast context.message.channel;
+                                    var roles: Array<Role> = channel.guild.roles.array();
+                                    var memberRoles: Array<Role> = member.roles.array();
+                                    var hasNative = false;
+
+                                    for (role in memberRoles) {
+                                        if (role.name.toLowerCase().indexOf('native') == 0 && role.name.toLowerCase() != wantedRole) {
+                                            hasNative = true;
+                                        }
+                                    }
+
+                                    if (Config.NO_TAGS_GO_WITH_NATIVE_SERVERS.indexOf(context.message.guild.id) < 0 && memberRoles.length < 1 || !hasNative) {
+                                        for (role in roles) {
+                                            if (role.name.toLowerCase().indexOf(Config.NO_TAGS_ROLE.toLowerCase()) > -1) {
+                                                member.addRole(role);
+                                            }
+                                        }
+                                    }
+                                }, 100);
+                            }
+
                             context.sendToChannel(l('success_remove', cast [author]));
                         }).catchError(function (error: Dynamic) {
                             Logger.exception(error);
@@ -44,6 +69,16 @@ class Learning extends LALBaseCommand {
                         });
                     } else {
                         member.addRole(targetRole).then(function (member: GuildMember): Void {
+                            if (Config.NO_TAGS_GO_WITH_NATIVE_SERVERS.indexOf(context.message.guild.id) < 0) {
+                                Timer.delay(function () {
+                                    for (role in roles) {
+                                        if (role.name.toLowerCase().indexOf(Config.NO_TAGS_ROLE.toLowerCase()) > -1) {
+                                            member.removeRole(role);
+                                        }
+                                    }
+                                }, 100);
+                            }
+
                             context.sendToChannel(l('success_give', cast [author]));
                         }).catchError(function (error: Dynamic) {
                             Logger.exception(error);

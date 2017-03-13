@@ -1,6 +1,7 @@
 package laldiscordbothx.model.commandlist;
 
 import laldiscordbothx.config.Config;
+import laldiscordbothx.config.Config;
 import haxe.Timer;
 import discordhx.guild.GuildMember;
 import discordbothx.log.Logger;
@@ -45,7 +46,7 @@ class Role extends LALBaseCommand {
                     if (roleExists && targetRole != null) {
                         if (member.roles.has(targetRole.id)) {
                             member.removeRole(targetRole).then(function (member: GuildMember): Void {
-                                if (roleIsNative) {
+                                if (Config.NO_TAGS_GO_WITH_NATIVE_SERVERS.indexOf(context.message.guild.id) < 0 || roleIsNative) {
                                     Timer.delay(function () {
                                         var channel:TextChannel = cast context.message.channel;
                                         var roles: Array<DiscordRole> = channel.guild.roles.array();
@@ -58,7 +59,7 @@ class Role extends LALBaseCommand {
                                             }
                                         }
 
-                                        if (!hasNative) {
+                                        if (Config.NO_TAGS_GO_WITH_NATIVE_SERVERS.indexOf(context.message.guild.id) < 0 && memberRoles.length < 1 || !hasNative) {
                                             for (role in roles) {
                                                 if (role.name.toLowerCase().indexOf(Config.NO_TAGS_ROLE.toLowerCase()) > -1) {
                                                     member.addRole(role);
@@ -75,7 +76,7 @@ class Role extends LALBaseCommand {
                             });
                         } else {
                             member.addRole(targetRole).then(function (member: GuildMember): Void {
-                                if (roleIsNative) {
+                                if (Config.NO_TAGS_GO_WITH_NATIVE_SERVERS.indexOf(context.message.guild.id) < 0 || roleIsNative) {
                                     Timer.delay(function () {
                                         for (role in roles) {
                                             if (role.name.toLowerCase().indexOf(Config.NO_TAGS_ROLE.toLowerCase()) > -1) {
