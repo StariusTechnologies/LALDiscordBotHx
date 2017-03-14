@@ -109,6 +109,35 @@
                         "Bon... random.cat a planté on dirait. Je suis désolé %% :( ..."
                     ]
                 },
+                "country": {
+                    "description": [
+                        "Vous permet de vous rajouter un rôle"
+                    ],
+                    "parse_error": [
+                        "%% => Tu as oublié de me préciser le rôle que tu veux!"
+                    ],
+                    "wrong_channel": [
+                        "%% => Tu veux que je t'attribue un rôle... Sur une discussion privée ? T'es bizarre :| ."
+                    ],
+                    "forbidden": [
+                        "%% => Je n'ai pas le droit de te donner le rôle que tu m'as indiqué. En fait, je ne sais même pas s'il existe."
+                    ],
+                    "not_found": [
+                        "%% => Je n'ai pas trouvé le rôle que tu m'as indiqué. Tout porte à penser qu'il... N'existe pas. **musique dramatique**\nTu peux taper !rolelist pour voir la liste des roles disponibles :) ."
+                    ],
+                    "fail_give": [
+                        "%% => J'ai bien essayé de t'attribuer ce rôle, mais ça n'a pas fonctionné."
+                    ],
+                    "success_give": [
+                        "%% => C'est bon, je viens de t'assigner ce rôle :) !"
+                    ],
+                    "fail_remove": [
+                        "%% => J'ai bien essayé de te retirer ce rôle, mais ça n'a pas fonctionné."
+                    ],
+                    "success_remove": [
+                        "%% => C'est bon, je viens de te retirer ce rôle :) !"
+                    ]
+                },
                 "crash": {
                     "description": [
                         "Cette commande, elle me tue. Non mais... Littéralement, en fait"

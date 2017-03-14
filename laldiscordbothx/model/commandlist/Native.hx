@@ -22,6 +22,7 @@ class Native extends LALBaseCommand {
         if (args.length > 0) {
             if (context.message.guild != null) {
                 var wantedRole = 'native ' + args.join(' ').toLowerCase();
+                var specialSnowflake: Bool = Config.NO_TAGS_GO_WITH_NATIVE_SERVERS.indexOf(context.message.guild.id) > -1;
 
                 var channel:TextChannel = cast context.message.channel;
                 var roles: Array<Role> = channel.guild.roles.array();
@@ -51,7 +52,7 @@ class Native extends LALBaseCommand {
                                     }
                                 }
 
-                                if (Config.NO_TAGS_GO_WITH_NATIVE_SERVERS.indexOf(context.message.guild.id) < 0 && memberRoles.length < 1 || !hasNative) {
+                                if (!specialSnowflake && memberRoles.length < 1 || specialSnowflake && !hasNative) {
                                     for (role in roles) {
                                         if (role.name.toLowerCase().indexOf(Config.NO_TAGS_ROLE.toLowerCase()) > -1) {
                                             member.addRole(role);

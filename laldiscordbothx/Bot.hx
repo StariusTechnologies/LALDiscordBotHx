@@ -1,5 +1,6 @@
 package laldiscordbothx;
 
+import laldiscordbothx.model.commandlist.Country;
 import laldiscordbothx.config.Config;
 import discordbothx.event.NotificationBus;
 import laldiscordbothx.model.PermissionSystem;
@@ -56,6 +57,9 @@ class Bot {
                 cast Type.resolveClass(PROJECT_NAME + '.model.commandlist.' + commandName)
             );
         }
+
+        bot.commands.set('from', Country);
+        bot.commands.set('of', Country);
 
         clientEventHandler = new ClientEventHandler(bot.client);
 

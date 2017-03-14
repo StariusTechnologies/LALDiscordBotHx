@@ -109,6 +109,35 @@
                         "Welp... Seems like random.cat just crashed. I'm sorry %% :( ..."
                     ]
                 },
+                "country": {
+                    "description": [
+                        "Allows you to add yourself a role"
+                    ],
+                    "parse_error": [
+                        "%% => You forgot to tell me which role you want!"
+                    ],
+                    "wrong_channel": [
+                        "%% => You want me to give you a role... On a private channel? You're weird :| ."
+                    ],
+                    "forbidden": [
+                        "%% => I don't have the right to give you the role you wrote. Actually, I don't even know if it exists."
+                    ],
+                    "not_found": [
+                        "%% => I couldn't find the role you wrote. Everything in this case leads me to think that this role... Doesn't exist. **dramatic music**\nYou can type !rolelist to have the list of the available roles :) ."
+                    ],
+                    "fail_give": [
+                        "%% => I tried to give you that role, but it didn't work."
+                    ],
+                    "success_give": [
+                        "%% => Alright, I just gave you that role :) !"
+                    ],
+                    "fail_remove": [
+                        "%% => I tried to remove that role from you, but it didn't work."
+                    ],
+                    "success_remove": [
+                        "%% => Alright, I just removed that role from you :) !"
+                    ]
+                },
                 "crash": {
                     "description": [
                         "This command kills me. I mean... Literally"

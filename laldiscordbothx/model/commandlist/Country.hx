@@ -8,12 +8,12 @@ import discordbothx.core.CommunicationContext;
 import discordhx.channel.TextChannel;
 import discordhx.role.Role;
 
-class HalfNative extends LALBaseCommand {
+class Country extends LALBaseCommand {
     public function new(context: CommunicationContext) {
         super(context);
 
         nbRequiredParams = 1;
-        paramsUsage = '(the role you want)';
+        paramsUsage = '(the country you live in)';
     }
 
     override public function process(args: Array<String>): Void {
@@ -21,7 +21,7 @@ class HalfNative extends LALBaseCommand {
 
         if (args.length > 0) {
             if (context.message.guild != null) {
-                var wantedRole = 'half native ' + args.join(' ').toLowerCase();
+                var wantedRole = 'of ' + args.join(' ').toLowerCase();
                 var specialSnowflake: Bool = Config.NO_TAGS_GO_WITH_NATIVE_SERVERS.indexOf(context.message.guild.id) > -1;
 
                 var channel: TextChannel = cast context.message.channel;

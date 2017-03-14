@@ -23,6 +23,8 @@ class Role extends LALBaseCommand {
         if (args.length > 0) {
             if (context.message.guild != null) {
                 var wantedRole = args.join(' ').toLowerCase();
+                var specialSnowflake: Bool = Config.NO_TAGS_GO_WITH_NATIVE_SERVERS.indexOf(context.message.guild.id) > -1;
+
                 var roleIsRelay = wantedRole == 'relay';
                 var roleIsNative = wantedRole.indexOf('native') == 0;
                 var roleIsFluent = wantedRole.indexOf('fluent') == 0;
@@ -59,7 +61,7 @@ class Role extends LALBaseCommand {
                                             }
                                         }
 
-                                        if (Config.NO_TAGS_GO_WITH_NATIVE_SERVERS.indexOf(context.message.guild.id) < 0 && memberRoles.length < 1 || !hasNative) {
+                                        if (!specialSnowflake && memberRoles.length < 1 || specialSnowflake && !hasNative) {
                                             for (role in roles) {
                                                 if (role.name.toLowerCase().indexOf(Config.NO_TAGS_ROLE.toLowerCase()) > -1) {
                                                     member.addRole(role);
