@@ -30,8 +30,13 @@ class Role extends LALBaseCommand {
                 var roleIsFluent = wantedRole.indexOf('fluent') == 0;
                 var roleIsLearning = wantedRole.indexOf('learning') == 0;
                 var roleIsStudying = wantedRole.indexOf('studying') == 0;
-    
-                if (roleIsRelay || roleIsNative || roleIsFluent || roleIsLearning || roleIsStudying) {
+                var roleIsHalfNative = wantedRole.indexOf('half native') == 0;
+                var roleIsHeritage = wantedRole.indexOf('half native') == 0;
+                var granted = roleIsRelay || roleIsNative || roleIsFluent || roleIsLearning;
+
+                granted = granted || roleIsStudying || roleIsHalfNative || roleIsHeritage;
+
+                if (granted) {
                     var channel:TextChannel = cast context.message.channel;
                     var roles: Array<DiscordRole> = channel.guild.roles.array();
                     var roleExists = false;
