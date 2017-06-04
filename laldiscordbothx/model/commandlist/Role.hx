@@ -31,7 +31,7 @@ class Role extends LALBaseCommand {
                 var roleIsLearning = wantedRole.indexOf('learning') == 0;
                 var roleIsStudying = wantedRole.indexOf('studying') == 0;
                 var roleIsHalfNative = wantedRole.indexOf('half native') == 0;
-                var roleIsHeritage = wantedRole.indexOf('half native') == 0;
+                var roleIsHeritage = wantedRole.indexOf('heritage') == 0;
                 var granted = roleIsRelay || roleIsNative || roleIsFluent || roleIsLearning;
 
                 granted = granted || roleIsStudying || roleIsHalfNative || roleIsHeritage;

@@ -1,8 +1,6 @@
 package laldiscordbothx.model.commandlist;
 
 import discordbothx.log.Logger;
-import laldiscordbothx.config.Config;
-import discordbothx.service.DiscordUtils;
 import discordbothx.core.CommunicationContext;
 import discordhx.message.Message;
 import discordhx.channel.TextChannel;
@@ -43,8 +41,10 @@ class Rolelist extends LALBaseCommand {
                 var roleIsFluent = currentRole.indexOf('fluent') == 0;
                 var roleIsLearning = currentRole.indexOf('learning') == 0;
                 var roleIsStudying = currentRole.indexOf('studying') == 0;
+                var roleIsHalfNative = currentRole.indexOf('half native') == 0;
+                var roleIsHeritage = currentRole.indexOf('heritage') == 0;
 
-                if (roleIsRelay || roleIsNative || roleIsFluent || roleIsLearning || roleIsStudying) {
+                if (roleIsRelay || roleIsNative || roleIsFluent || roleIsLearning || roleIsStudying || roleIsHalfNative || roleIsHeritage) {
                     message += role + '\n';
                 }
             }
