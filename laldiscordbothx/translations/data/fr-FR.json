@@ -136,6 +136,9 @@
                     ],
                     "success_remove": [
                         "%% => C'est bon, je viens de te retirer ce rôle :) !"
+                    ],
+                    "native_reminder": [
+                        "Hey au fait %%, pense à te définir au moins une langue native avec la commande `!native` :) !"
                     ]
                 },
                 "crash": {
@@ -242,6 +245,9 @@
                     ],
                     "success_remove": [
                         "%% => C'est bon, je viens de te retirer ce rôle :) !"
+                    ],
+                    "native_reminder": [
+                        "Hey au fait %%, pense à te définir au moins une langue native avec la commande `!native` :) !"
                     ]
                 },
                 "getlinks": {
@@ -310,6 +316,9 @@
                     ],
                     "success_remove": [
                         "%% => C'est bon, je viens de te retirer ce rôle :) !"
+                    ],
+                    "native_reminder": [
+                        "Hey au fait %%, pense à te définir au moins une langue native avec la commande `!native` :) !"
                     ]
                 },
                 "heritage": {
@@ -339,6 +348,9 @@
                     ],
                     "success_remove": [
                         "%% => C'est bon, je viens de te retirer ce rôle :) !"
+                    ],
+                    "native_reminder": [
+                        "Hey au fait %%, pense à te définir au moins une langue native avec la commande `!native` :) !"
                     ]
                 },
                 "ipa": {
@@ -376,6 +388,9 @@
                     ],
                     "success_remove": [
                         "%% => C'est bon, je viens de te retirer ce rôle :) !"
+                    ],
+                    "native_reminder": [
+                        "Hey au fait %%, pense à te définir au moins une langue native avec la commande `!native` :) !"
                     ]
                 },
                 "link": {
@@ -416,6 +431,9 @@
                     ],
                     "success_remove": [
                         "%% => C'est bon, je viens de te retirer ce rôle :) !"
+                    ],
+                    "native_reminder": [
+                        "Hey au fait %%, pense à te définir au moins une langue native avec la commande `!native` :) !"
                     ]
                 },
                 "oed": {
@@ -504,6 +522,9 @@
                     ],
                     "success_remove": [
                         "%% => C'est bon, je viens de te retirer ce rôle :) !"
+                    ],
+                    "native_reminder": [
+                        "Hey au fait %%, pense à te définir au moins une langue native avec la commande `!native` :) !"
                     ]
                 },
                 "rolelist": {
@@ -603,6 +624,9 @@
                     ],
                     "success_remove": [
                         "%% => C'est bon, je viens de te retirer ce rôle :) !"
+                    ],
+                    "native_reminder": [
+                        "Hey au fait %%, pense à te définir au moins une langue native avec la commande `!native` :) !"
                     ]
                 },
                 "unregisterpermission": {

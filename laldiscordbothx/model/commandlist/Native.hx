@@ -62,6 +62,10 @@ class Native extends LALBaseCommand {
                             }, 100);
 
                             context.sendToChannel(l('success_remove', cast [author]));
+
+                            if (needNativeReminder(specialSnowflake, member, wantedRole)) {
+                                context.sendToChannel(l('native_reminder', cast [author]));
+                            }
                         }).catchError(function (error: Dynamic): Void {
                             Logger.exception(error);
                             context.sendToChannel(l('fail_remove', cast [author]));
@@ -91,5 +95,24 @@ class Native extends LALBaseCommand {
         } else {
             context.sendToChannel(l('parse_error', cast [author]));
         }
+    }
+
+    private function needNativeReminder(specialSnowflake: Bool, member: GuildMember, wantedRole: String): Bool {
+        var reminderNeeded = false;
+
+        if (specialSnowflake) {
+            var memberRoles: Array<Role> = member.roles.array();
+            var hasNative = false;
+
+            for (role in memberRoles) {
+                if (role.name.toLowerCase().indexOf('native') == 0 && role.name.toLowerCase() != wantedRole) {
+                    hasNative = true;
+                }
+            }
+
+            reminderNeeded = !hasNative;
+        }
+
+        return reminderNeeded;
     }
 }
