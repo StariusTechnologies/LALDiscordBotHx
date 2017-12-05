@@ -17,7 +17,7 @@
     </target>
 
     <target name="dump-sql">
-        <exec executable="${mysqlDumpFolder}/mysqldump" output="database.sql">
+        <exec executable="mysqldump" output="database.sql">
             <arg value="-d" />
             <arg value="--user=${dbUser}" />
             <arg value="--password=${dbPassword}" />

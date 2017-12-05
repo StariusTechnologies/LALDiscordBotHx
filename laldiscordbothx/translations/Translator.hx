@@ -10,7 +10,7 @@ class Translator {
     private var translations: Map<String, Dynamic>;
 
     public function new() {
-        var files: Array<FileInfo> = FileSystem.getFilesInFolder('laldiscordbothx/translations/data/', 'json');
+        var files: Array<FileInfo> = FileSystem.getFilesInFolder('laldiscordbothx/translations/data', 'json');
 
         translations = new Map<String, Map<String, Array<String>>>();
 

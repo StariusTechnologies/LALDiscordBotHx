@@ -1,7 +1,6 @@
 package laldiscordbothx.model.commandlist;
 
 import laldiscordbothx.config.Config;
-import laldiscordbothx.config.Config;
 import haxe.Timer;
 import discordhx.guild.GuildMember;
 import discordbothx.log.Logger;

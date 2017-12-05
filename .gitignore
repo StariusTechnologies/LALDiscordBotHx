@@ -2,6 +2,7 @@
 *.iml
 .idea
 node_modules
+package-lock.json
 
 # Private files
 laldiscordbothx/config/AuthDetails.hx

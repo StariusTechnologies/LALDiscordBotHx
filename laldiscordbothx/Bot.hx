@@ -1,5 +1,12 @@
 package laldiscordbothx;
 
+import laldiscordbothx.model.commandlist.Heritage;
+import laldiscordbothx.model.commandlist.HalfNative;
+import laldiscordbothx.model.commandlist.Studying;
+import laldiscordbothx.model.commandlist.Learning;
+import laldiscordbothx.model.commandlist.Fluent;
+import laldiscordbothx.model.commandlist.Native;
+import laldiscordbothx.model.commandlist.Role;
 import laldiscordbothx.model.commandlist.Country;
 import laldiscordbothx.config.Config;
 import discordbothx.event.NotificationBus;
@@ -47,7 +54,7 @@ class Bot {
             return LangCenter.instance.translate(serverId, 'helpdialogend');
         };
 
-        var commandList: Array<String> = FileSystem.getFileListInFolder('laldiscordbothx/model/commandlist/');
+        var commandList: Array<String> = FileSystem.getFileListInFolder('laldiscordbothx/model/commandlist');
 
         for (command in commandList) {
             var commandName = command.substr(0, command.lastIndexOf('.'));
@@ -60,6 +67,18 @@ class Bot {
 
         bot.commands.set('from', Country);
         bot.commands.set('of', Country);
+
+        bot.commands.set('notrole', Role);
+        bot.commands.set('removerole', Role);
+        bot.commands.set('notnative', Native);
+        bot.commands.set('notfluent', Fluent);
+        bot.commands.set('notlearning', Learning);
+        bot.commands.set('notstudying', Studying);
+        bot.commands.set('nothalfnative', HalfNative);
+        bot.commands.set('notheritage', Heritage);
+        bot.commands.set('notcountry', Country);
+        bot.commands.set('notfrom', Country);
+        bot.commands.set('notof', Country);
 
         clientEventHandler = new ClientEventHandler(bot.client);
 
